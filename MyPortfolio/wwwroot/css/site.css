@@ -1,0 +1,265 @@
+﻿/* Rustic Gothic baseline */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
+:root {
+    --bg-0: #0b0a0a;
+    --bg-1: #121012;
+    --panel: #1a161b;
+    --ink-0: #e7e3db;      /* parchment */
+    --ink-1: #c9c2b6;
+    --muted: #8c867a;
+    --gold: #a98c66;       /* antique gold */
+    --line: #2a242a;
+    --shadow: rgba(0,0,0,.55);
+    --radius: 14px;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --max-w: 1200px;
+}
+
+/* === Global === */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+    margin: 0;
+    color: var(--ink-0);
+    font-family: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+
+    /* Safer overlay over the image using layered backgrounds */
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.68), rgba(0,0,0,.68)),
+      url('/images/bee-front.png') no-repeat center center fixed,
+      linear-gradient(180deg, var(--bg-0), var(--bg-1));
+    background-size: cover, cover, auto;
+}
+
+/* Optional subtle paper texture */
+body::after {
+    content: "";
+    position: fixed; inset: 0; pointer-events: none;
+    background:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.015) 0 2px, transparent 2px 4px);
+    mix-blend-mode: overlay;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: "Cinzel", serif;
+    color: var(--ink-0);
+    text-shadow: 0 1px 0 rgba(0,0,0,.35);
+}
+h1 { letter-spacing: .5px; }
+h2 { letter-spacing: .4px; }
+p { color: var(--ink-1); }
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: #d1b58d; }
+
+/* Layout helpers */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--space-3); }
+
+/* === Header/Nav (matches your Index.razor classes) === */
+.header {
+    position: sticky;
+    top: 0; z-index: 10;
+    backdrop-filter: blur(6px);
+    background: linear-gradient(180deg, rgba(18,16,18,.7), rgba(18,16,18,.35));
+    border-bottom: 1px solid var(--line);
+}
+.nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: var(--space-2) 0;
+}
+.brand { display: flex; align-items: center; gap: .6rem; }
+.brand__mark {
+    font-family: "Cinzel", serif;
+    color: var(--gold);
+    letter-spacing: .5px;
+}
+.nav__links { display: flex; gap: 1rem; align-items: center; }
+.nav__links a { color: var(--ink-1); font-weight: 600; }
+.nav__links a:hover { color: var(--ink-0); }
+
+/* === Sections/Panels === */
+.section {
+    padding: clamp(2rem, 5vw, 4rem) 0;
+}
+.panel {
+    background: linear-gradient(180deg, rgba(26,22,27,.95), rgba(18,16,18,.95));
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 20px 40px -10px var(--shadow), inset 0 1px 0 rgba(255,255,255,.03);
+    padding: var(--space-3);
+}
+.rule {
+    display: flex; align-items: center; gap: .75rem; margin-bottom: var(--space-2);
+}
+.rule::after {
+    content: ""; height: 1px; flex: 1;
+    background: linear-gradient(90deg, rgba(169,140,102,.35), rgba(169,140,102,0));
+}
+
+/* === Cards/Grid (used in your Work section) === */
+.grid { display: grid; gap: var(--space-3); }
+.grid--cards { grid-template-columns: repeat(12, 1fr); }
+.grid--cards > * { grid-column: span 12; }
+@media (min-width:700px){ .grid--cards > * { grid-column: span 6; } }
+@media (min-width:1100px){ .grid--cards > * { grid-column: span 4; } }
+
+.card {
+    position: relative; border-radius: var(--radius); overflow: clip;
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(120% 120% at 0% 0%, rgba(255,255,255,.025), transparent 60%),
+      linear-gradient(180deg, rgba(26,22,27,.95), rgba(18,16,18,.95));
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 24px 40px -18px var(--shadow); }
+.card__media { aspect-ratio: 16/9; border-bottom: 1px solid var(--line); }
+.card__body { padding: var(--space-2) var(--space-3) var(--space-3); }
+.card__title { font-family: "Cinzel", serif; margin: 0 0 .25rem; }
+.card__tags { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .5rem; }
+.tag { font-size: .8rem; padding: .2rem .5rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: rgba(0,0,0,.2); }
+/* Media inside cards should fill the frame */
+.card__media > img,
+.card__media > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Make the whole card clickable without changing colors */
+.card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* === Buttons === */
+.btn {
+    display: inline-flex; align-items: center; gap: .6rem;
+    padding: .6rem .95rem; border-radius: 10px; border: 1px solid var(--line);
+    color: var(--ink-0);
+    background: linear-gradient(180deg, rgba(26,22,27,.9), rgba(18,16,18,.9));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+    transition: transform .15s ease, box-shadow .2s ease;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 16px 26px -16px var(--shadow); }
+.btn--primary {
+    border-color: rgba(169,140,102,.35);
+    background:
+      linear-gradient(180deg, rgba(169,140,102,.18), rgba(169,140,102,.06)),
+      linear-gradient(180deg, rgba(26,22,27,.9), rgba(18,16,18,.9));
+}
+.btn--ghost { color: var(--gold); background: transparent; }
+
+/* === Footer === */
+.footer {
+    border-top: 1px solid var(--line);
+    padding: var(--space-3) 0 var(--space-4);
+    color: var(--muted);
+    text-align: center;
+}
+
+/* Center the initial hero and tighten layout */
+.hero {
+  padding: clamp(3rem, 6vw, 6rem) 0;
+}
+
+.hero--center {
+  min-height: 70svh;                 /* fill most of the viewport */
+  display: grid;
+  place-items: center;               /* vertical + horizontal center */
+  text-align: center;
+}
+
+.hero--center .hero__wrap {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+}
+
+/* Keep sections centered without full-width stretching */
+.section > .container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Optional: narrow the main content slightly for a framed look */
+.container {
+  max-width: 1000px;                  /* was 1200px; feels more “folio” */
+}
+
+/* Hero name and title sizing (make name larger than the title) */
+.hero__name {
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: clamp(60px, 7vw, 72px); /* <- adjust this to change the name size */
+  line-height: 1.05;
+  margin: 0 0 .5rem 0;
+}
+.hero__title {
+  text-align: center;
+  font-size: clamp(28px, 4.5vw, 44px);
+  margin: 0;
+}
+
+/* Tighter space between the hero (Recent Highlights) and the About section */
+.hero {
+  padding-block-end: clamp(1rem, 2.5vw, 2rem); /* adjust this to reduce/increase the gap */
+}
+.hero + .section {
+  padding-top: clamp(0.5rem, 2vw, 1.25rem);    /* adjust this to fine-tune the gap */
+}
+
+/* Contact actions layout */
+.contact__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Contact: center the section and shrink-wrap the panel around its content */
+#contact .container {
+  display: flex;
+  justify-content: center;
+}
+
+#contact .panel {
+  display: block;                      /* override inline-block */
+  width: min(60%, 680px);             /* increase/decrease this to taste */
+  margin: 0 auto;                      /* keep centered */
+  text-align: center;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* Center the heading line and the action buttons */
+#contact .rule {
+  justify-content: center;
+  text-align: center;
+}
+#contact .rule::before {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, rgba(169,140,102,0), rgba(169,140,102,.35));
+}
+/* Increase space between email and LinkedIn links */
+#contact .contact__actions {
+    justify-content: center;
+    gap: clamp(7.0rem, 4vw, 2.5rem); /* was 1.25rem */
+}
+
+/* Smooth scroll back to hero ("Hive") */
+html { scroll-behavior: smooth; }
+/* Story page: local action bar */
+.story__actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0 0 0.75rem 0;
+}

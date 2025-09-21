@@ -1,0 +1,45 @@
+﻿@page "/work"
+@layout MainLayout
+
+<section class="section">
+  <div class="container">
+    <div class="panel">
+      <div class="story__actions">
+        <a class="btn btn--primary" href="/#home" aria-label="Back to home">Home</a>
+      </div>
+
+      <h1 class="rule">Projects</h1>
+      <p>
+        A selection of projects. I focus on responsive components, performance,
+        and maintainable code. Below are visuals that highlight recent work.
+      </p>
+    </div>
+
+    <!-- Gallery: add more cards as needed -->
+    <div class="grid grid--cards" style="margin-top:1rem;">
+      <article class="card">
+        <div class="card__media">
+          <img src="/images/projects/Portfolio Website.png"
+               alt="Portfolio website screenshot"
+               loading="lazy" decoding="async" />
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Portfolio Website</h3>
+          <p class="muted">Blazor WebAssembly • PWA</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__media">
+          <img src="/images/projects/Shopping Website.png"
+               alt="Shopping website screenshot"
+               loading="lazy" decoding="async" />
+        </div>
+         <div class="card__body">
+           <h3 class="card__title">Shopping Website</h3>
+           <p class="muted">Blazor WebAssembly • PWA</p>
+         </div>
+      </article>
+    </div>
+  </div>
+</section>

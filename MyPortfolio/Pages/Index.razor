@@ -1,0 +1,232 @@
+﻿@page "/"
+@layout MainLayout
+
+<header class="header">
+  <div class="container nav">
+    <div class="brand">
+      <span class="brand__mark">D.D.M.</span>
+      <strong>Dennis Moland</strong>
+    </div>
+    <nav class="nav__links">
+      <a href="#home" title="Back to the hero">Highlights</a>
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <div class="container hero__wrap">
+      <div>
+        <h1 class="hero__name">Dennis Moland</h1>
+        <h2 class="hero__title">Web Development with Style</h2>
+        <p class="hero__lead">
+          I build elegant, performant web experiences and services, 
+          blending contemporary engineering
+          with timeless, handcrafted design sensibilities.
+        </p>
+
+        <!-- Updated: three primary CTAs -->
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="/story">My Story</a>
+          <a class="btn" href="/work">My Work</a>
+          <a class="btn btn--ghost" href="/bees">My Bees</a>
+        </div>
+      </div>
+
+      <aside class="panel panel--soft">
+        <h3 class="rule">Recent Highlights</h3>
+        <ul class="muted" style="margin:0;padding-left:1rem;">
+          <li>Starting the building of my sink in the kitchen, and shower in the bathroom of my tiny home.</li>
+          <li>Designed this cool logo and website for my online presence and plan to use for business.</li>
+          <li>I've sadly lost one hive due to what I believe to be an insect infestation. The bees were gone and so was all the brood and honey. The second hive was still intact and I diverted resources to it. I'm hoping they'll make enough brood and honey to keep them over the winter.</li>
+        </ul>
+      </aside>
+    </div>
+ </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="panel">
+        <h2 class="rule">About</h2>
+        <p>
+                    I discovered my passion for computers later in life, but once I began exploring, I quickly became fascinated by how technology works behind the scenes. What started with simply taking computers apart and rebuilding them grew into building custom PCs for friends and eventually running a small business assembling systems.
+
+                    That curiosity expanded into experimenting with small form-factor computers like Raspberry Pi and Arduino. Over the years, I’ve built projects ranging from automated garden monitoring systems to remote hive surveillance with cameras for my beekeeping hobby. These experiences showed me how technology can bridge the gap between simple concepts and complex real-world applications.
+
+                    My journey also led me into software and operating systems. From Windows and macOS to Linux distributions, I learned to install, configure, and maintain multiple environments. At one point, I even developed a lightweight custom operating system with preloaded, customizable shortcuts to streamline specific workflows.
+
+                    Networking and cybersecurity soon followed. I explored how information flows across systems, and I trained myself on tools like Wireshark, Metasploit, and the Kali Linux suite. These tools helped me practice defending networks, analyzing signals, and strengthening security skills.
+
+                    Naturally, this path led me into programming. Starting with HTML and CSS, I quickly picked up JavaScript and began creating responsive web pages and applications. Today, I continue to grow my skills with frameworks like Blazor, constantly seeking opportunities to blend front-end creativity with back-end logic.
+
+                    At the core, I’ve always been a builder and a problem-solver. Whether it’s assembling hardware, coding applications, or securing networks, I approach challenges with persistence, curiosity, and a commitment to learning every single day.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <div class="container">
+      <h2 class="rule">Different Projects</h2>
+      <div class="grid grid--cards">
+        <article class="card">
+          <a class="card__link" href="/work" title="See more projects">
+            <div class="card__media">
+              <img src="/images/projects/Portfolio Website.png"
+                   alt="Screenshot of Dennis Moland portfolio site"
+                   loading="lazy" decoding="async" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">WASM Portfolio</h3>
+              <p class="muted">Blazor WebAssembly • PWA • Offline-first</p>
+              <div class="card__tags">
+                <span class="tag">Blazor</span>
+                <span class="tag">.NET 8</span>
+                <span class="tag">PWA</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <!-- Bees Highlight card (restored) -->
+        <article class="card">
+          <a class="card__link" href="/bees" title="See more from the apiary">
+            <div class="card__media">
+              <img src="/images/bees/New Bees.jpg"
+                     alt="Photo of my new bees in their hive"
+                     loading="lazy" decoding="async" />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">The Bees</h3>
+              <p class="muted">Beehive Update</p>
+              <div class="card__tags">
+                <span class="tag">Bees</span>
+                <span class="tag">@((BeesIsVideo ? "Video" : "Photo"))</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="rule">Skills</h2>
+      <div class="grid grid--cards">
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title">Languages</h3>
+            <ul class="muted" style="margin:0; padding-left:1rem;">
+              <li>Java</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title">Tools</h3>
+            <ul class="muted" style="margin:0; padding-left:1rem;">
+              <li>Android Studio</li>
+              <li>GitHub</li>
+              <li>VS Code</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title">Concepts</h3>
+            <ul class="muted" style="margin:0; padding-left:1rem;">
+              <li>Responsive design</li>
+              <li>App development</li>
+              <li>Quality assurance</li>
+            </ul>
+          </div>
+        </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Soft Skills</h3>
+                        <p class="muted" style="margin:.25rem 0 .5rem;">
+                            Adaptable, service‑oriented communicator who bridges tech and people.
+                        </p>
+                        <ul class="muted" style="margin:0; padding-left:1rem;">
+                            <li>Clear written and verbal communication</li>
+                            <li>Team collaboration and leadership (US Army, Job Corps)</li>
+                            <li>Customer service and sales consultation</li>
+                            <li>Problem‑solving, troubleshooting, root‑cause analysis</li>
+                            <li>Time management, prioritization, reliability</li>
+                            <li>Documentation and knowledge sharing</li>
+                            <li>Conflict resolution; stakeholder demos/presentations</li>
+                            <li>Conversational Spanish</li>
+                            <li>Creative writing — science‑fiction author</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__body">
+                        <h3 class="card__title">Certifications</h3>
+                        <ul class="muted" style="margin:0; padding-left:1rem;">
+                            <li>Computer Hardware Technician (2015–Present)</li>
+                            <li>Build a Simple App in Android Studio with Java — Coursera</li>
+                            <li>Build a Persistent Storage App in Android Studio — Coursera</li>
+                            <li>Foundations of Coding: Front‑End — Microsoft</li>
+                            <li>Introduction to Programming with C# — Microsoft</li>
+                            <li>Microsoft Front‑End Web Development</li>
+                            <li>Forklift Certifications</li>
+                        </ul>
+                    </div>
+                </article>
+
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title">Relevant Experience</h3>
+            <p class="muted" style="margin:.25rem 0 0;">
+              Computer Sales & Support — Best Buy / Geek Squad (2015–2018)
+            </p>
+            <ul class="muted" style="margin:.5rem 0 0; padding-left:1rem;">
+              <li>Diagnosed and repaired hardware/software issues</li>
+              <li>Sold and supported networks and smart-home setups</li>
+              <li>Guided non-technical users through upgrades</li>
+            </ul>
+            <p style="margin:.75rem 0 0;">
+              Summary: Service‑driven, detail‑oriented problem solver who communicates clearly and turns issues into solutions.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="panel">
+        <h2 class="rule">Contact</h2>
+        <p class="muted" style="margin:0 0 1rem 0;">My contact info</p>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="mailto:molden0073@pm.me" aria-label="Email Dennis">My Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/dennis-moland-4a50a02a4/"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Open LinkedIn profile">My LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+@code {
+  // Put your media in wwwroot/media/bees and update the path below.
+  // Use .mp4/.webm for video or .jpg/.png/.gif for images.
+  private string BeesMediaUrl = "/images/bees/hives.jpg"; // <- your hive photo path
+  private bool BeesIsVideo =>
+      BeesMediaUrl.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase)
+      || BeesMediaUrl.EndsWith(".webm", StringComparison.OrdinalIgnoreCase);
+}

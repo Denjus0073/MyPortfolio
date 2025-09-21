@@ -1,0 +1,37 @@
+﻿@page "/bees"
+@layout MainLayout
+
+<section class="section">
+  <div class="container">
+    <div class="panel">
+      <div class="story__actions">
+        <a class="btn btn--primary" href="/#home" aria-label="Back to home">Home</a>
+      </div>
+
+      <h1 class="rule">The Bees</h1>
+      <p>
+        Updates from the apiary—health checks, seasonal progress, and hive management.
+        Photos below highlight recent milestones and the day‑to‑day of beekeeping.
+      </p>
+    </div>
+
+    <!-- Gallery: add more cards as needed -->
+    <div class="grid grid--cards" style="margin-top:1rem;">
+      <article class="card">
+        <div class="card__media">
+          <img src="/images/bees/New Bees.jpg"
+               alt="New bee colony in hive"
+               loading="lazy" decoding="async" />
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__media">
+          <img src="/images/bees/New Bees1.jpg"
+               alt="Apiary hives"
+               loading="lazy" decoding="async" />
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
