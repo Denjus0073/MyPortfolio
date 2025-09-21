@@ -13,3 +13,23 @@ Projects Page to showcase example applications and future work
 Responsive Layout that adapts to desktop and mobile
 
 Custom Styling with CSS for a unique visual theme
+
+🛠️ Built With
+
+Blazor WebAssembly — frontend framework
+
+C# — main programming language
+
+Bootstrap — responsive layout (optional if used later)
+
+[Custom CSS] — gothic-inspired theme
+
+Project Structure
+
+Pages/ → Razor pages like Home, About, Projects
+
+Shared/ → Shared layout and navigation components
+
+wwwroot/css/ → Stylesheets (site.css)
+
+wwwroot/images/ → Images used in the design
